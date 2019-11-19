@@ -73,7 +73,7 @@ app.post('/admin/vagas/editar/:id', async(request, response) => {
   const { titulo, descricao, categoria } = request.body
   const { id } = request.params
   const db = await dbConnection
-  await db.run(`update vagas set categoria = ${categoria}, titulo = '${titulo}', descricao = '${descricao}', where id = ${id}`)
+  await db.run(`update vagas set categoria = ${categoria}, titulo = '${titulo}', descricao = '${descricao}, 'where id = ${id}`)
   response.redirect('/admin/vagas')
   
 })

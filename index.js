@@ -10,7 +10,7 @@ const dbConnection = sqlite.open(path.resolve(__dirname, 'banco.sqlite'), { Prom
 const port = process.env.PORT || 3000
 
 app.use('/admin', (req, res, next) => {
-  req.hostname === 'localhost' ? next() : res.send('Not allowed')
+  req.hostname === 'localhost' ? next() : res.send('<h1>Not allowed</h1>')
 })
 
 app.set('views', path.join(__dirname, 'views'))

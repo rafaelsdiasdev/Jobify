@@ -1,0 +1,26 @@
+<%- include('header') %>
+
+<h2>
+  Nova vaga:
+  <a href="/admin/vagas">Vagas</a>
+</h2>
+<div>
+  <form method="POST">
+    <label for="">Titulo:</label>
+    <input name="titulo" type="text">
+    <br>
+    <label for="">Descrição:</label>
+    <textarea name="descricao" id="" cols="30" rows="10"></textarea>
+    <br>
+    <label for="">Categoria</label>
+    <select name="categoria" id="">
+      <% categorias.forEach(categoria => { %>
+        <option value="<%= categoria.id %>"><%= categoria.categoria %></option>
+      <% }) %>
+    </select>
+    <br>
+    <button>Salvar vaga</button>
+  </form>
+</div>
+
+<%- include('footer') %>
